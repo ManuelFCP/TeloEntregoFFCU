@@ -9,51 +9,28 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
     <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/menus.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
 </head>
 <body>
-    <section id="inicio">
-        <header>
-            <div class="textHeader">
-                <div>
-                    <h1 class="title">Te lo EntregooD</h1>
-                </div>
-                <nav>
-                    <ul>
-                        <li>
-                            <a href="../index.html">
-                                <i class="bi bi-house-door"></i>
-                                <span>Inicio</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#comidas">
-                                <i class="bi bi-cup-hot"></i>
-                                <span>Comidas</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#platos">
-                                <i class="bi bi-cup-hot"></i>
-                                <span>Platos</span>
-                            </a></li>
-                        <li>
-                            <a href="#Conocenos">
-                                <i class="bi bi-people"></i>
-                                <span>Conocenos</span>
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
-                <div class="buttons">
-                    <a href=""><i class="bi bi-laptop"></i></a>
-                    <a href="pages/usuarios.html"><i class="bi bi-person-circle"></i></a>
-                    <a href="https://www.instagram.com/juankaa_rv/"><i class="bi bi-instagram"></i></a> 
-					<a href="https://goo.gl/maps/5Zi7NFSxkAaWwWuD8" onclick="seleccionar()"><i class="bi bi-geo-alt"></i></a> 
-                </div>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top navbar-custom-style">
+        <div class="container">
+            <a class="navbar-brand brand-logo" href="../index.html">Fast Food</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto fs-5 align-items-center">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html"><i class="bi bi-house-door"></i> Inicio</a>
+                    </li>
+                    <li class="nav-item ms-lg-3 mt-3 mt-lg-0">
+                        <a class="btn btn-outline-primary rounded-pill px-4" href="../login.html" onclick="sessionStorage.clear()"><i class="bi bi-box-arrow-right"></i> Cerrar Sesión</a>
+                    </li>
+                </ul>
             </div>
-        </header>
-    </section>
+        </div>
+    </nav>
 
 
     <section class="menu" >
@@ -73,21 +50,24 @@
 									<img src="../images/Mani.jpeg" alt="Sopa">
 									<div class="menu_content">
 										<h4>Sopa de Mani <span>12Bs</span></h4>
-										<p>Aperiam tempore sit,perferendis numquam repudiandae porro voluptate dicta saepe facilis.</p>
+										<p>Tradicional sopa a base de maní molido, carne de res y papas fritas encima. Acompañada con pan marraqueta recién horneado.</p>
+										<button class="btn btn-primary comprarBtn" data-bs-toggle="modal" data-bs-target="#compraModal">COMPRAR</button>
 									</div>
 								</div>
 								<div class="single_menu">
 									<img src="../images/fideo.jpg" alt="Sopa">
 									<div class="menu_content">
 										<h4>Sopa de Fideo <span>8Bs</span></h4>
-										<p>Aperiam tempore sit,perferendis numquam repudiandae porro voluptate dicta saepe facilis.</p>
+										<p>Reconfortante caldo de res con fideo tostado, papas, zanahoria y perejil fresco. Servida con nuestra deliciosa llajwa tradicional.</p>
+										<button class="btn btn-primary comprarBtn" data-bs-toggle="modal" data-bs-target="#compraModal">COMPRAR</button>
 									</div>
 								</div>
 								<div class="single_menu">
 									<img src="../images/PapaLisa.jpeg" alt="Sopa">
 									<div class="menu_content">
 										<h4>Sopa de Papalisa <span>10Bs</span></h4>
-										<p>Aperiam tempore sit,perferendis numquam repudiandae porro voluptate dicta saepe facilis.</p>
+										<p>Delicioso chupe de papalisa picada con carne de res, habas y un toque de orégano. Viene con una porción de pan tostado.</p>
+										<button class="btn btn-primary comprarBtn" data-bs-toggle="modal" data-bs-target="#compraModal">COMPRAR</button>
 									</div>
 								</div>
 								
@@ -97,21 +77,24 @@
 									<img src="../images/Quinua.jpeg" alt="Sopa">
 									<div class="menu_content">
 										<h4>Sopa de Quinua<span>20Bs</span></h4>
-										<p>Aperiam tempore sit,perferendis numquam repudiandae porro voluptate dicta saepe facilis.</p>
+										<p>Nutritiva sopa de quinua real, con verduras frescas, carne de cordero tierna y papas. Incluye porción de pan marraqueta de la casa.</p>
+										<button class="btn btn-primary comprarBtn" data-bs-toggle="modal" data-bs-target="#compraModal">COMPRAR</button>
 									</div>
 								</div>
 								<div class="single_menu">
 									<img src="../images/Corbatitas.jpeg" alt="Sopa">
 									<div class="menu_content">
 										<h4>Sopa de Corbatitas<span>20Bs</span></h4>
-										<p>Aperiam tempore sit,perferendis numquam repudiandae porro voluptate dicta saepe facilis.</p>
+										<p>Caldo de pollo ligero con fideos en forma de corbata, zanahorias y arvejas. Perfecta para un almuerzo liviano, servida con pan.</p>
+										<button class="btn btn-primary comprarBtn" data-bs-toggle="modal" data-bs-target="#compraModal">COMPRAR</button>
 									</div>
 								</div>
 								<div class="single_menu">
 									<img src="../images/Pollo.jpeg" alt="Sopa">
 									<div class="menu_content">
 										<h4>Sopa de pollo<span>15Bs</span></h4>
-										<p>Aperiam tempore sit,perferendis numquam repudiandae porro voluptate dicta saepe facilis.</p>
+										<p>Clásica sopa casera con presas de pollo, arroz, papas y un mix de verduras de temporada. Acompañada de crutones de pan frito.</p>
+										<button class="btn btn-primary comprarBtn" data-bs-toggle="modal" data-bs-target="#compraModal">COMPRAR</button>
 									</div>
 								</div>
 								
@@ -122,5 +105,114 @@
 		</div>
 	</section>
 
+    <!-- Modal de Compra -->
+    <div class="modal fade" id="compraModal" tabindex="-1" aria-labelledby="compraModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content bg-dark text-white">
+                <div class="modal-header border-secondary">
+                    <h5 class="modal-title" id="compraModalLabel">Registrar Compra</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="compraForm">
+                        <div class="mb-3">
+                            <label for="producto" class="form-label">Producto</label>
+                            <input type="text" class="form-control" id="producto" readonly>
+                        </div>
+                        <div class="mb-3">
+                            <label for="precio" class="form-label">Precio</label>
+                            <input type="text" class="form-control" id="precio" readonly>
+                        </div>
+                        <div class="mb-3">
+                            <label for="cantidad" class="form-label">Cantidad</label>
+                            <input type="number" class="form-control" id="cantidad" min="1" value="1">
+                        </div>
+                        <div class="mb-4">
+                            <label for="totalPagar" class="form-label fw-bold">Total a Pagar</label>
+                            <input type="text" class="form-control form-control-lg fw-bold" id="totalPagar" readonly>
+                        </div>
+                        <div class="mb-3">
+                            <label for="metodoPago" class="form-label">Método de Pago</label>
+                            <select class="form-select" id="metodoPago" required>
+                                <option value="efectivo" selected>Efectivo</option>
+                                <option value="tarjeta">Tarjeta</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="nombre" class="form-label">Nombre</label>
+                            <input type="text" class="form-control" id="nombre" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="telefono" class="form-label">Teléfono</label>
+                            <input type="tel" class="form-control" id="telefono" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="direccion" class="form-label">Dirección</label>
+                            <textarea class="form-control" id="direccion" rows="3" required></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="comentarios" class="form-label">Comentarios</label>
+                            <textarea class="form-control" id="comentarios" rows="2"></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer border-secondary">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-primary" id="confirmarCompra">Confirmar Compra</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Selección de Rol -->
+    <div class="modal fade" id="roleModal" tabindex="-1" aria-labelledby="roleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="roleModalLabel">Seleccionar Rol</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <button type="button" class="btn btn-primary me-3" onclick="selectRole('usuario')">Usuario</button>
+                    <button type="button" class="btn btn-secondary" onclick="selectRole('admin')">Administrador</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Login -->
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="loginModalLabel">Iniciar Sesión</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="loginForm">
+                        <div class="mb-3">
+                            <label for="loginNombre" class="form-label">Nombre</label>
+                            <input type="text" class="form-control" id="loginNombre" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="loginPassword" class="form-label">Contraseña</label>
+                            <input type="password" class="form-control" id="loginPassword" required>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-primary" id="loginBtn">Iniciar Sesión</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/app.js"></script>
+    <script src="../js/tienda.js"></script>
 </body>
 </html>

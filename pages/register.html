@@ -47,10 +47,7 @@
                     </ul>
                 </nav>
                 <div class="buttons">
-                    <a href=""><i class="bi bi-laptop"></i></a>
-                    <a href="pages/usuarios.html"><i class="bi bi-person-circle"></i></a>
-                    <a href="https://www.instagram.com/juankaa_rv/"><i class="bi bi-instagram"></i></a> 
-                    <a href="https://goo.gl/maps/5Zi7NFSxkAaWwWuD8" onclick="seleccionar()"><i class="bi bi-geo-alt"></i></a> 
+                    <a href="../login.html"><i class="bi bi-person-circle"></i></a>
                 </div>
             </div>
         </header>
@@ -84,6 +81,50 @@
         </div>
     </section>
     <br><br><br><br><br>
+
+    <!-- Modal de Selección de Rol -->
+    <div class="modal fade" id="roleModal" tabindex="-1" aria-labelledby="roleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="roleModalLabel">Seleccionar Rol</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <button type="button" class="btn btn-primary me-3" onclick="selectRole('usuario')">Usuario</button>
+                    <button type="button" class="btn btn-secondary" onclick="selectRole('admin')">Administrador</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Login -->
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="loginModalLabel">Iniciar Sesión</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="loginForm">
+                        <div class="mb-3">
+                            <label for="loginNombre" class="form-label">Nombre</label>
+                            <input type="text" class="form-control" id="loginNombre" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="loginPassword" class="form-label">Contraseña</label>
+                            <input type="password" class="form-control" id="loginPassword" required>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-primary" id="loginBtn">Iniciar Sesión</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     
 </body>

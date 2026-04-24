@@ -3,9 +3,25 @@ addToShoppingCartButtons.forEach((addToCartButton) => {
   addToCartButton.addEventListener('click', addToCartClicked);
 });
 
-const comprarButton = document.querySelector('.comprarButton');
-comprarButton.addEventListener('click', comprarButtonClicked);
+const comprarButtons = document.querySelectorAll('.comprarBtn');
+comprarButtons.forEach((comprarButton) => {
+  comprarButton.addEventListener('click', comprarClicked);
+});
 
+const comprarButton = document.querySelector('.comprarButton');
+if (comprarButton) {
+  comprarButton.addEventListener('click', comprarButtonClicked);
+}
+
+const confirmarCompraButton = document.querySelector('#confirmarCompra');
+if (confirmarCompraButton) {
+  confirmarCompraButton.addEventListener('click', confirmarCompraClicked);
+}
+
+const cantidadInput = document.getElementById('cantidad');
+if (cantidadInput) {
+  cantidadInput.addEventListener('input', updateTotal);
+}
 const shoppingCartItemsContainer = document.querySelector(
   '.shoppingCartItemsContainer'
 );
@@ -19,6 +35,47 @@ function addToCartClicked(event) {
   const itemImage = item.querySelector('.item-image').src;
 
   addItemToShoppingCart(itemTitle, itemPrice, itemImage);
+}
+
+function comprarClicked(event) {
+  const button = event.target;
+  const item = button.closest('.item') || button.closest('.single_menu');
+
+  let itemTitle, itemPrice;
+
+  if (item.classList.contains('item')) {
+    // Estructura de pizzas.html
+    itemTitle = item.querySelector('.item-title').textContent;
+    itemPrice = item.querySelector('.item-price').textContent;
+  } else if (item.classList.contains('single_menu')) {
+    // Estructura de hamburguesas.html
+    const h4 = item.querySelector('h4');
+    itemTitle = h4.textContent.replace(/\d+Bs$/, '').trim(); // Remover precio del título
+    itemPrice = h4.querySelector('span').textContent;
+  }
+
+  document.getElementById('producto').value = itemTitle;
+  document.getElementById('precio').value = itemPrice;
+  document.getElementById('cantidad').value = 1;
+  updateTotal();
+}
+
+function updateTotal() {
+  const precioEl = document.getElementById('precio');
+  const cantidadEl = document.getElementById('cantidad');
+  const totalPagarEl = document.getElementById('totalPagar');
+
+  if (!precioEl || !cantidadEl || !totalPagarEl) return;
+
+  const precioValue = parseFloat(precioEl.value);
+  const cantidadValue = parseInt(cantidadEl.value);
+
+  if (!isNaN(precioValue) && !isNaN(cantidadValue) && cantidadValue > 0) {
+    const total = precioValue * cantidadValue;
+    totalPagarEl.value = `${total.toFixed(2)} Bs`;
+  } else {
+    totalPagarEl.value = '0.00 Bs';
+  }
 }
 
 function addItemToShoppingCart(itemTitle, itemPrice, itemImage) {
@@ -115,4 +172,32 @@ function quantityChanged(event) {
 function comprarButtonClicked() {
   shoppingCartItemsContainer.innerHTML = '';
   updateShoppingCartTotal();
+}
+
+function confirmarCompraClicked() {
+  const producto = document.getElementById('producto').value;
+  const precio = document.getElementById('precio').value;
+  const cantidad = document.getElementById('cantidad').value;
+  const nombre = document.getElementById('nombre').value;
+  const email = document.getElementById('email').value;
+  const telefono = document.getElementById('telefono').value;
+  const direccion = document.getElementById('direccion').value;
+  const metodoPago = document.getElementById('metodoPago').value;
+  const comentariosEl = document.getElementById('comentarios');
+  const comentarios = comentariosEl ? comentariosEl.value : '';
+
+  if (!nombre || !email || !telefono || !direccion) {
+    alert('Por favor, complete todos los campos obligatorios.');
+    return;
+  }
+
+  // Aquí se podría enviar los datos a un servidor, pero por ahora mostramos una alerta
+  alert(`Compra confirmada:\nProducto: ${producto}\nPrecio: ${precio}\nCantidad: ${cantidad}\nMétodo de Pago: ${metodoPago}\nNombre: ${nombre}\nEmail: ${email}\nTeléfono: ${telefono}\nDirección: ${direccion}\nComentarios: ${comentarios}`);
+
+  // Cerrar el modal
+  const modal = bootstrap.Modal.getInstance(document.getElementById('compraModal'));
+  modal.hide();
+
+  // Limpiar el formulario
+  document.getElementById('compraForm').reset();
 }
